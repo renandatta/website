@@ -46,6 +46,8 @@ class FeedController extends Controller
     }
 
     public function save(Request $request, $id){
+        $request->merge(['date' => date('Y-m-d',strtotime($request->input('date')))]);
+
         if($id == 'new'){
             $field = Feed::create($request->all());
             $action = "added";

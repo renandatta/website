@@ -10,6 +10,10 @@
     <link href="{{ asset('assets_admin/select2/select2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets_admin/dropify/css/dropify.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('assets_admin/summernote/summernote-bs4.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_admin/bootstrap-datepicker/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_admin/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets_admin/feathericon-release/css/feathericon.min.css') }}" rel="stylesheet">
+
     <style>
         .select2-container--default .select2-selection--single{
             height: 36px;
@@ -37,6 +41,9 @@
         }
         .card-header-tab{
             padding: 0;
+        }
+        .table td{
+            vertical-align: middle;
         }
     </style>
     @yield('csspage')
@@ -120,6 +127,8 @@
 <script src="{{ asset('assets_admin/select2/select2.min.js') }}"></script>
 <script src="{{ asset('assets_admin/dropify/js/dropify.min.js') }}"></script>
 <script src="{{ asset('assets_admin/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('assets_admin/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('assets_admin/bootstrap-timepicker/bootstrap-timepicker.min.js') }}"></script>
 <script>
     $('.select2').select2();
     $('.dropify').dropify({
@@ -133,7 +142,22 @@
     $('.summernote').summernote({
         placeholder: 'Content goes here',
         tabsize: 2,
-        height: 500
+        height: 800
+    });
+    $('.datepicker').datepicker({
+        autoclose:true,
+        format:'dd-mm-yyyy',
+        oritentation:"auto",
+        useCurrent: false,
+    });
+    $('.timepicker').timepicker({
+        showMeridian: false,
+        showSeconds: true,
+        defaultTime: false,
+        icons:{
+            up: 'fe fe-arrow-up',
+            down: 'fe fe-arrow-down'
+        }
     });
 </script>
 @yield('jspage')

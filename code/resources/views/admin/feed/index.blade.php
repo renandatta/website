@@ -56,7 +56,7 @@
                                 @foreach($data as $key => $value)
                                     <tr>
                                         <td>{{ (($data->currentPage()-1)*10)+($key+1) }}</td>
-                                        <td>{{ $value->title }}<br><small>{{ $value->slug }}</small></td>
+                                        <td>{{ $value->title }}</td>
                                         <td>{{ $value->category }}</td>
                                         <td>{{ $value->tags }}</td>
                                         <td class="text-right">
